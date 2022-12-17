@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:background="@color/vangcam">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Them thong tin chi tieu"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTenSP"
+            android:hint="Nhap ten san pham"
+            android:textSize="20dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinner"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtGia"
+            android:layout_marginTop="10dp"
+            android:hint="Nhap gia san pham"
+            android:textSize="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtNgaymua"
+            android:layout_marginTop="10dp"
+            android:hint="Nhap thoi gian mua"
+            android:textSize="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAdd"
+            android:text="Them chi tieu"
+            android:background="@drawable/edttext"
+            android:backgroundTint="@color/vangcam"
+            android:padding="10dp"/>
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCancel"
+            android:text="Huy"
+            android:padding="10dp"
+            android:background="@drawable/edttext"
+            android:backgroundTint="@color/vangcam"
+            android:layout_marginLeft="75dp"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QL_ChiTieu</string>
+    <string-array name="category">
+        <item>Mua sắm</item>
+        <item>Đổ xăng</item>
+        <item>Tiền nhà</item>
+        <item>Tiền nước</item>
+        <item>Tiền ăn</item>
+    </string-array>
+</resources>
