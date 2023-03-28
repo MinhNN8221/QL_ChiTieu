@@ -25,4 +25,6 @@ public interface SanPhamDao {
     List<SanPham> getByName(String tenSP, int id);
     @Query("Select * from sanpham where loaisp= :loaiSP and idUser= :id")
     List<SanPham> getByCategory(String loaiSP, int id);
+    @Query("Select * from sanpham where ngaymua like:month ")
+    List<SanPham> getByMonth(String month);
 }

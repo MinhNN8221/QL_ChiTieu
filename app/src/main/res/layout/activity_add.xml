@@ -25,12 +25,34 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical">
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtTenSP"
-            android:hint="Nhap ten san pham"
-            android:textSize="20dp"/>
+            android:layout_height="40dp"
+            android:background="@drawable/bg_edttext"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTenSP"
+                android:hint="Nhap ten san pham"
+                android:textSize="20dp"
+                android:singleLine="true"
+                android:layout_gravity="end|center_vertical"
+                android:layout_weight="0.9"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@null"/>
+            <ImageView
+                android:id="@+id/clearButton"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:src="@drawable/baseline_clear_24"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="0.1"
+                android:layout_marginRight="15dp"
+                android:clickable="true"/>
+        </LinearLayout>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="40dp"

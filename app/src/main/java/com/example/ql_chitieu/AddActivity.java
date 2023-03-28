@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +24,10 @@ import com.example.ql_chitieu.entity.Userr;
 
 import java.util.Calendar;
 
-public class AddActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
     private EditText edtTenSp, edtGiaSp, edtNgaymua;
     private Spinner spinner;
+    private ImageView clearButton;
     private Button btnAdd, btnCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,27 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         btnAdd=findViewById(R.id.btnAdd);
         btnCancel=findViewById(R.id.btnCancel);
         spinner=findViewById(R.id.spinner);
+        clearButton=findViewById(R.id.clearButton);
 
+        //nút xóa bên phải
+        edtTenSp.addTextChangedListener(this);
+        edtTenSp.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                // Nếu EditText được chọn, hiển thị nút xóa
+                if (!hasFocus || edtTenSp.getText().toString().isEmpty()) {
+                    clearButton.setVisibility(View.INVISIBLE);
+                } else {
+                    clearButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtTenSp.setText("");
+            }
+        });
 
         spinner.setAdapter(new ArrayAdapter<>(this, R.layout.item_spinner, getResources().getStringArray(R.array.category)));
         btnAdd.setOnClickListener(this);
@@ -97,5 +121,24 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         if(v==btnCancel){
             finish();
         }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        if (charSequence.toString().equals("")) {
+            clearButton.setVisibility(View.INVISIBLE);
+        } else {
+            clearButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
     }
 }

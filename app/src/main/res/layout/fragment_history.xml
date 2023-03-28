@@ -57,6 +57,23 @@
         android:layout_marginLeft="10dp"
         android:text="Tong so tien chi trong thang"
         android:textSize="15dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/c_left"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            />
+        <ImageButton
+            android:id="@+id/c_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_chevron_right_24"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
